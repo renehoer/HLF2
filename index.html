@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HLF 2 Feuerwehr-Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="startScreen">
+      <h1>HLF 2 Quiz</h1>
+      <input type="text" id="username" placeholder="Dein Name" />
+      <button onclick="startQuiz()">Quiz starten</button>
+    </div>
+
+    <div id="questionScreen" class="hidden">
+      <h2 id="questionText"></h2>
+      <img id="questionImage" src="" alt="Fragebild" />
+      <div id="answers"></div>
+    </div>
+
+    <div id="mapScreen" class="hidden">
+      <h2>Wo wird das Gerät verstaut?</h2>
+      <img src="bilder/hlf2.jpg" usemap="#hlfMap" id="hlfImage" alt="HLF 2 Fahrzeug" />
+      <map name="hlfMap">
+        <area shape="rect" coords="50,50,150,150" onclick="checkStorage('G1')">
+        <area shape="rect" coords="160,50,260,150" onclick="checkStorage('G2')">
+        <!-- weitere Bereiche hier -->
+      </map>
+    </div>
+
+    <div id="resultScreen" class="hidden">
+      <h2>Ergebnis</h2>
+      <p id="finalScore"></p>
+      <button onclick="showLeaderboard()">Rangliste anzeigen</button>
+    </div>
+
+    <div id="leaderboardScreen" class="hidden">
+      <h2>Rangliste</h2>
+      <ul id="leaderboard"></ul>
+      <button onclick="resetQuiz()">Neustarten</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
